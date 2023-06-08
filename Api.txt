@@ -1,0 +1,50 @@
+STANDAR API
+
+{root.api}/v1/{grouping}/{endpoint}
+{root.api}/v1/{grouping}/{endpoint}
+SAMPLE:
+http://mern-api.kebayancoding.com/v1/auth/login
+
+========================
+standar status response
+========================
+
+200 - OK                    --> PANGGIL API SUKSES
+201 - TAMBAH                --> POSTING SUKSES
+400 - BAD RESQUEST          --> ERROR ON CLIENT SIDE (BISA INPUT  YANG SALAH dll..)
+401 - UNAUTHORIZED          --> USER NOT Authorized to the request.
+403 - FORBIDDEN             --> USER NOT ALLOWED TO Access
+404 - NOT FOUND             --> RESQUEST ENDPOINT NOT FOUND
+500 - INTERNAL SERVER ERROR --> ERROR ON SERVER SIDE
+502 - BAD GATEWAY           --> INVALID  RESPONSE FROM ANTOHER  RESQUEST   
+
+
+GROUP :Authentication
+[1] - Register
+{root.api}/{version}/auth/register
+req:
+{
+    "nama" : "Rdm",
+    "email":"Rdm@gmail.com"
+    "password":"12345"
+}
+res:
+{
+    "message" : "berhasil register"
+    "data": {
+        "id" :1,
+        "name":"Rdm.com"
+        "email":"Rdm@gmail.com"
+        "password":"12345"
+    }
+}
+
+
+[2] - Login
+{root.api}/{version}/auth/login
+
+GROUP: BLOG 
+[1] - create Blog Post
+[2] - tambah blog post
+[3] - update Blog post
+[4] - delete Blog Post
